@@ -1,13 +1,12 @@
 
 <!--
+ Um Tipo de Resolucao
 
 //setar uma variavel
 
 $palavra = "casa";
 
 echo "String: " . $palavra;
-
-$myArray = array(); // php array
 
 $myArray = str_split($palavra); //divide o array
 
@@ -30,34 +29,43 @@ if ($palavra == $novaPalavra) {
 	echo "$novaPalavra não é um palindrome";
 
 }
-
 -->
+
+
+
 <?php
+function checkPalindrome($palavra)
 
-$palavra = "madam";
+{
+    $palavraRev = strrev($palavra);
 
-$palavraRev = strrev($palavra);
-	
-	$palavra_invertida = str_split($palavraRev);
+    $palavra_invertida = str_split($palavraRev);
 
-	$palin = '';
+    $palin = '';
 
-	foreach($palavra_invertida as $value) {
+    foreach ($palavra_invertida as $value) {
 
-		$palin .= $value;
-	}
+        $palin .= $value;
+    }
 
-echo $palin;
+    if ($palavra == $palin) {
 
-	if ($palavra == $palin) {
+        return true;
+    } else {
 
-		echo "<br> palindrome";
-	} else {
-
-		echo "<br> not palindrome";
-	}
+        return false;
+    }
+}
 
 
+
+    while ( $palavra < 1000) {
+
+        checkPalindrome($palavra);
+    }
+
+
+    ?>
 
 
 
